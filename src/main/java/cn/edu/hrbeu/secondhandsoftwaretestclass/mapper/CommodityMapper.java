@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface CommodityMapper {
 
-    @Select("SELECT * FROM commodity" +
+    @Select("SELECT * FROM commodity " +
             "WHERE commodity_name LIKE '%value%'")
     public List<Commodity> findCommodity(String Str);
 }
