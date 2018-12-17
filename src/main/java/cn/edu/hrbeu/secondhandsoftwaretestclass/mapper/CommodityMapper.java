@@ -10,8 +10,9 @@ import java.util.List;
 public interface CommodityMapper {
 
     @Select("SELECT * FROM commodity " +
-            "WHERE commodity_name LIKE '%value%'")
-    public List<Commodity> findCommodity(String Str);
+            "WHERE commodity_name LIKE '%${commodityName}%'")
+    public List<Commodity> findCommodity(Commodity commodity);
+
 
 
     @Select("SELECT * FROM commodity LIMIT 9")
