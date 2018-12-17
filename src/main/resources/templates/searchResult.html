@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 <title>搜索结果</title>
-		
+
 		<link rel="stylesheet" href="css/zd-1.0.css" />
 		<link rel="stylesheet" href="css/index.css">
 		<link rel="stylesheet" href="css/search.css">
@@ -28,14 +28,14 @@
 			<div class="nav-logo">
 				<a href="###"><img src="img/logo.jpg" alt=""></a>
 			</div>
-		
+
 			<!-- 控制menu -->
 			<div class="nav-menu">
 				<span></span>
 				<span></span>
 				<span></span>
 			</div>
-		
+
 			<!-- 菜单 -->
 			<ul class="nav-list">
 				<li>
@@ -83,13 +83,13 @@
 						<li>
 							<a href="${pageContext.request.contextPath }/consigneeInfor.action?phone=${userInfor1.phone}">收货地址</a>
 						</li>
-						
+
 					</ul>
 				</li>
-		
+
 			</ul>
 		</nav>
-		
+
 		<script>
 			$(document).click(function() {
 				$('.nav-list').removeClass('open')
@@ -115,7 +115,7 @@
 		</li>
 		<li class="li2">
 			<a href="${pageContext.request.contextPath }/showShoppingCar.action?id=${petInfor.petDetail}" class="a1">购物车</a>
-			
+
 		</li>
 		<li class="li3">
 			<a href="" class="a1">经销商</a>
@@ -126,13 +126,13 @@
 		<li class="li5">
 			<a href="" class="a1">联系方式</a>
 		</li>
-		
+
 		</ul>
 		</table>
-		
+
 	</div>
 
-	
+
 <div>
 	<br>
 	<br>
@@ -166,7 +166,7 @@
                   			<strong class="content top_goods">${commodity.commodityDetail}</strong>
                    		</a>
                     	<p class="other">商品名: ${commodity.commodityName }</p>
-                    </div>   
+                    </div>
             </div>
             <div class="right">
               <div class="price">价格 <span>${commodity.commodityPrice }</span></div>
