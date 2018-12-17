@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class CommodityController {
     @Autowired
     CommodityService commodityService;
@@ -27,4 +27,5 @@ public class CommodityController {
         List<Commodity> commodityList = commodityService.findCommodity(commodityName);
         return "success";
     }
+
 }
