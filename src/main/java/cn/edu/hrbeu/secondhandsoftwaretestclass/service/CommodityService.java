@@ -16,4 +16,11 @@ public class CommodityService {
         return commodityMapper.findCommodity(str);
     }
 
+
+    public List<Commodity> find9FirstCommodity(){
+        return commodityMapper.find9FirstCommodity();
+    }
+
+
+
 }
