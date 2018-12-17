@@ -15,11 +15,9 @@ public class CommodityController {
 
     @RequestMapping("/queryCommodity/search")
     public String queryCommodity(HttpSession session,Commodity commodity){
-        System.out.println(commodity.getCommodityName());
+
         List<Commodity> commodityList = commodityService.findCommodity(commodity);
-
         session.setAttribute("commodityList", commodityList);
-        return "searchResult";
+        return "easySearchResult";
     }
-
 }
