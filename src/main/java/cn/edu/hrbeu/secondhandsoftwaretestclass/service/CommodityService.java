@@ -21,6 +21,10 @@ public class CommodityService {
         return commodityMapper.find9FirstCommodity();
     }
 
+    public Commodity findCommodityByCommodityId(Integer commodityId){
+        return commodityMapper.findCommodityByCommodityId(commodityId);
+    }
+
 
 
 }

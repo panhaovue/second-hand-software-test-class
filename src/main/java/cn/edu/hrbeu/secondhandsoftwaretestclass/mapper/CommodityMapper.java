@@ -17,4 +17,8 @@ public interface CommodityMapper {
 
     @Select("SELECT * FROM commodity LIMIT 9")
     public List<Commodity> find9FirstCommodity();
+
+    @Select("SELECT * FROM commodity " +
+            "WHERE commodity_id=#{commodityId}")
+    public Commodity findCommodityByCommodityId(Integer commodityId);
 }

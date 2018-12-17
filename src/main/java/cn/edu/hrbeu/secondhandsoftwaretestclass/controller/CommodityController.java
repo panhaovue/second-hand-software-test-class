@@ -21,4 +21,5 @@ public class CommodityController {
         session.setAttribute("commodityList", commodityList);
         return "searchResult";
     }
+
 }
