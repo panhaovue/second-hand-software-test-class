@@ -14,6 +14,11 @@ public class UserService {
         userMapper.insertUser(user);
         return user;
     }
+
+    public void updateUserByUserId(User user){
+        userMapper.updateUser(user);
+    }
+
     public User findUserByPhoneAndStudentId(User user){
         User user1 = userMapper.findUserByPhoneAndStudentId(user);
         return user1;

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="./Floating labels example for Bootstrap_files/bootstrap.min.css" th:href="@{webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet">
+
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container" th:fragment="copyright">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">Brand</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <!--<form class="navbar-form navbar-left" role="search">-->
+                        <!--<div class="form-group">-->
+                            <!--<input type="text" class="form-control" />-->
+                        <!--</div> <button type="submit" class="btn btn-default">Submit</button>-->
+                    <!--</form>-->
+                    <div th:if="${session.user}==null">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="/register" target="_blank">注册</a>
+                            </li>
+                            <li>
+                                <a href="/login"  target="_blank">登录</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div th:if="${session.user}!=null">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="/userInformation"  target="_blank">个人信息</a>
+                            </li>
+                            <li>
+                                <a href="/myCommodity" target="_blank">我的商品</a>
+                            </li>
+                            <li>
+                                <a href="/logout">退出</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+</div>
+</body>
+</html>

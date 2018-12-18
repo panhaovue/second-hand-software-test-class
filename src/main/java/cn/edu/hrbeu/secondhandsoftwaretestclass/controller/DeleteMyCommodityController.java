@@ -8,18 +8,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 @Controller
-public class IndexController {
+public class DeleteMyCommodityController {
+
 
     @Autowired
     CommodityService commodityService;
 
-    @RequestMapping({"/","/index.html"})
-    public String indexShow(HttpSession session){
-        List<Commodity> commodityList = commodityService.find9FirstCommodity();
-        session.setAttribute("indexCommodityList",commodityList);
-        return "index";
+    @RequestMapping("/deleteMyCommodity")
+    public String deleteMyCommodity(HttpSession session,Commodity commodity){
+        User user = (User) session.getAttribute("user");
+        if (user.getUserId() != commodity.getUserId()){
+            //用户与卖家不匹配
+            return "fail";
+        }
+        commodityService.deleteCommodity(commodity);
+        return "redirect:myCommodity";
     }
+
 }

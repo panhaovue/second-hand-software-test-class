@@ -20,4 +20,9 @@ public class CommodityController {
         session.setAttribute("commodityList", commodityList);
         return "easySearchResult";
     }
+
+    @RequestMapping("/header")
+    public String headerHTML(){
+        return "header";
+    }
 }

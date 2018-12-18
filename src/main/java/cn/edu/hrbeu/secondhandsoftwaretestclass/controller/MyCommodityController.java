@@ -11,15 +11,21 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
-public class IndexController {
+public class MyCommodityController {
 
     @Autowired
     CommodityService commodityService;
 
-    @RequestMapping({"/","/index.html"})
-    public String indexShow(HttpSession session){
-        List<Commodity> commodityList = commodityService.find9FirstCommodity();
-        session.setAttribute("indexCommodityList",commodityList);
-        return "index";
+    @RequestMapping("/myCommodity")
+    public String myCommodityHTML(HttpSession session){
+        User user = (User)session.getAttribute("user");
+        if (user == null){
+            //未登录
+            return "fail";
+        }
+        List<Commodity> commodityList = commodityService.findCommodityByUserId(user.getUserId());
+        session.setAttribute("commodityList",commodityList);
+        return "myCommodity";
     }
+
 }
