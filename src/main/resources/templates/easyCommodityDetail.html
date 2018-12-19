@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>
+        <span>商品名:</span><span class="card-text"  th:text="${session.commodity.commodityName}">这里是商品名</span>
+    </p>
+
+    <p>
+        <span>商品价格:</span><span class="card-text" th:text="${session.commodity.commodityPrice}">这里是商品价格</span>
+    </p>
+    <p>
+        <span>上架日期:</span><span class="card-text" th:text="${session.commodity.commodityTime}">这里是商品上架日期</span>
+    </p>
+    <p>
+        <span>截止日期:</span><span class="card-text" th:text="${session.commodity.commodityDeadline}">这里是商品截止日期</span>
+    </p>
+    <p>
+        <span>联系方式:</span><span class="card-text" th:text="${session.commodity.contactWay}">这里是商品截止日期</span>
+    </p>
+    <p>
+        <span>售卖人ID:</span><a class="card-text" th:href="@{'../otherUserInformation?userId='+${session.commodity.userId}}"  th:text="${session.commodity.userId}">这里是商品截止日期</a>
+    </p>
+    <p>
+        <span>详细描述:</span><span class="card-text" th:text="${session.commodity.commodityDetail}">这里是商品截止日期</span>
+    </p>
+</body>
+</html>

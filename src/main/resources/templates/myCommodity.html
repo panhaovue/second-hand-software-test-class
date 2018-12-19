@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="./Floating labels example for Bootstrap_files/bootstrap.min.css" th:href="@{webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet">
+    <title>我的商品</title>
+
+    <!-- bootstrap的核心js文件 -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js" th:src="@{webjars/jquery/1.11.1/jquery.js}"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"  th:src="@{webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+
+
+</head>
+<body>
+<a href="tencent://Message/?Uin=365690468&websiteName=q-zone.qq.com&Menu=yes">
+    <img border="0" SRC="http://wpa.qq.com/pa?p=1:365690468:14" alt="点击这里给我发消息">
+</a>
+<h1 align="center">我上架的商品</h1>
+<div class="container">
+    <div class="row clearfix">
+        <div th:each="commodity,iterStat:${session.commodityList}" class="col-md-4 column">
+            <h2>
+                <p>
+                    <span class="card-text"  th:text="${commodity.commodityName}">这里是商品名</span>
+                </p>
+            </h2>
+            <p>
+                <span>商品价格:</span><span class="card-text" th:text="${commodity.commodityPrice}">这里是商品价格</span>
+            </p>
+            <p>
+                <span>商品类别:</span>
+                <span class="card-text" th:if="${commodity.commodityKind}==1 ">书</span>
+                <span class="card-text" th:if="${commodity.commodityKind}==2 ">服装</span>
+                <span class="card-text" th:if="${commodity.commodityKind}==3 ">电子设备</span>
+                <span class="card-text" th:if="${commodity.commodityKind}==4 ">虚拟商品</span>
+                <span class="card-text" th:if="${commodity.commodityKind}==5 ">美妆个护</span>
+                <span class="card-text" th:if="${commodity.commodityKind}==6 ">其它</span>
+            </p>
+            <p>
+                <span>上架日期:</span><span class="card-text" th:text="${commodity.commodityTime}">这里是商品上架日期</span>
+            </p>
+            <p>
+                <span>截止日期:</span><span class="card-text" th:text="${commodity.commodityDeadline}">这里是商品截止日期</span>
+            </p>
+            <p>
+                <span>联系方式:</span><span class="card-text" th:text="${commodity.contactWay}">这里是联系方式</span>
+            </p>
+            <p>
+                <span>售卖人ID:</span><span class="card-text" th:text="${commodity.userId}">这里是售卖人ID</span>
+            </p>
+            <p>
+                <span>详细描述:</span><span class="card-text" th:text="${commodity.commodityDetail}">这里是商品详细描述</span>
+            </p>
+
+            <p>
+                <a  target="_blank" th:href="@{'../updateMyCommodity?commodityId='+${commodity.commodityId}}">修改该信息</a>
+                <a th:href="@{'../deleteMyCommodity?commodityId='+${commodity.commodityId}+'&userId='+${commodity.userId}}">下架该商品</a>
+            </p>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>搜索结果</title>
+		
+		<link rel="stylesheet" href="css/zd-1.0.css" />
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/search.css">
+		<link rel="stylesheet" href="css/float.css">
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+</head>
+
+
+
+<div>
+		<nav>
+			&lt;!&ndash; logo &ndash;&gt;
+			<div class="nav-logo">
+				<a href="###"><img src="img/logo.jpg" alt=""></a>
+			</div>
+		
+			&lt;!&ndash; 控制menu &ndash;&gt;
+			<div class="nav-menu">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		
+			&lt;!&ndash; 菜单 &ndash;&gt;
+			<ul class="nav-list">
+				<li>
+					<a href="loginIndex.jsp">首页</a>
+				</li>
+				<li>
+					<a href="" class="active">宠物分类
+						<div class="carect"></div>
+					</a>
+					<ul class="menu">
+						<li>
+							<a href="">狗狗</a>
+						</li>
+						<li>
+							<a href="">猫咪</a>
+						</li>
+						<li>
+							<a href="">小宠</a>
+						</li>
+						<li>
+							<a href="">水族</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="">宠物服务</a>
+				</li>
+				<li>
+					<a href="">爱宠学堂</a>
+				</li>
+				<li>
+					<a href="">狗狗百科</a>
+				</li>
+				<li>
+					<a href="">猫猫百科</a>
+				</li>
+				<li>
+					<a href="" class="active">ID:${userInfor1.userName}
+						<div class="carect"></div>
+					</a>
+					<ul class="menu">
+						<li>
+							<a href="${pageContext.request.contextPath }/findUserInfor.action?phone=${userInfor1.phone}">个人信息</a>
+						</li>
+						<li>
+							<a href="${pageContext.request.contextPath }/consigneeInfor.action?phone=${userInfor1.phone}">收货地址</a>
+						</li>
+						
+					</ul>
+				</li>
+		
+			</ul>
+		</nav>
+		
+		<script>
+			$(document).click(function() {
+				$('.nav-list').removeClass('open')
+			})
+			$('.nav-menu,.nav-list').click(function(e) {
+				e.stopPropagation()
+			})
+			$('nav').find('.nav-menu').click(function(e) {
+				$('.nav-list').toggleClass('open')
+			})
+		</script>
+	</div>
+
+<body>
+&lt;!&ndash;页面滚动效果        &ndash;&gt;
+		<div class="all" style="width:100%; height:100%; overflow:auto; border:1px solid #000000;">
+
+		<div style="z-index: 9999;position: fixed ! important;right:5%;bottom:40%;">
+		<table width="100%" style="position: absolute; width: 260px;right: 0px;bottom: 0px;">
+			<ul class="float">
+		<li class="li1">
+			<a href="" class="a1">咨询</a>
+		</li>
+		<li class="li2">
+			<a href="${pageContext.request.contextPath }/showShoppingCar.action?id=${petInfor.petDetail}" class="a1">购物车</a>
+			
+		</li>
+		<li class="li3">
+			<a href="" class="a1">经销商</a>
+		</li>
+		<li class="li4">
+			<a href="" class="a1">售前咨询</a>
+		</li>
+		<li class="li5">
+			<a href="" class="a1">联系方式</a>
+		</li>
+		
+		</ul>
+		</table>
+		
+	</div>
+
+	
+<div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="bar">
+        	<form id="search">
+            <input type="text" placeholder="请输入名称" name="crid">
+            <button type="submit"></button>
+        	</form>
+	</div>
+</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<c:forEach items="${petList }" var="petInfor">
+<div class="search_content">
+	<ul>
+		<li>
+			<div class="left">
+				<div class="img">
+					<a target="_blank" href="${pageContext.request.contextPath }/returns.action?id=${commodity.commodityDetail}"><img style="margin-top:2px;width:200px;height:200px" src="img/dog.jpg"></a>
+                </div>
+                    <div class="info1">
+                   		<a target="_blank" class="title" href="details.jsp">
+                  			<strong class="content top_goods">${commodity.commodityDetail}</strong>
+                   		</a>
+                    	<p class="other">商品名: ${commodity.commodityName }</p>
+                    </div>   
+            </div>
+            <div class="right">
+              <div class="price">价格 <span>${commodity.commodityPrice }</span></div>
+            </div>
+        </li>
+	</ul>
+</div>
+
+</c:forEach>
+
+</body>
+</html>-->

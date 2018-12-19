@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+
+    <title>上架商品</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./Floating labels example for Bootstrap_files/bootstrap.min.css" th:href="@{webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/floating-labels.css" th:href="@{css/floating-labels.css}" rel="stylesheet">
+  </head>
+
+  <body>
+    <form class="form-signin" action="/offerCommodity/try" method="get">
+      <div class="text-center mb-4">
+        <img class="mb-4" src="./Floating labels example for Bootstrap_files/bootstrap-solid.svg" th:src="@{image/bootstrap-solid.svg}" alt="" width="72" height="72">
+        <!--<h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>-->
+        <p>请填入要上架的商品信息
+
+        </p>
+      </div>
+      <div class="form-label-group">
+            <input type="text" id="inputName" name="commodityName" class="form-control" placeholder="Name" required="" autofocus="">
+            <label for="inputName">商品名</label>
+      </div>
+      <div class="form-label-group">
+        <input type="number" id="inputCommodityPrice" name="commodityPrice" class="form-control" placeholder="Number" required="" autofocus="">
+        <label for="inputCommodityPrice">商品价格</label>
+      </div>
+
+
+        <div class="form-label-group">
+          <input type="text" id="inputContactWay"  name="contactWay" class="form-control" placeholder="Text" required="">
+          <label for="inputContactWay">联系方式</label>
+        </div>
+        <div class="form-label-group">
+            <input type="date" id="inputCommodityTime" name="commodityTime" class="form-control" placeholder="Date" required="">
+            <label for="inputCommodityTime">截止日期</label>
+        </div>
+        <div>
+            <label for="fave" class="form-control">商品类别:
+                <select id="fave"name="commodityKind">
+                    <option value="1" label="书">书</option>
+                    <option value="2" label="服装">服装</option>
+                    <option value="3" label="电子设备">电子设备</option>
+                    <option value="4" label="虚拟商品">虚拟商品</option>
+                    <option value="5" label="美妆个护">美妆个护</option>
+                    <option value="6" selected label="其他">其他</option>
+                </select>
+            </label>
+        </div>
+        <div class="form-label-group">
+            <input type="text" id="inputCommodityTimeDetail" name="commodityTimeDetail" class="form-control" placeholder="Text" required="" autofocus="">
+            <label for="inputCommodityTimeDetail">商品描述</label>
+        </div>
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">上架商品</button>
+      <p class="mt-5 mb-3 text-muted text-center">© 2017-2018</p>
+    </form>
+  
+
+</body></html>

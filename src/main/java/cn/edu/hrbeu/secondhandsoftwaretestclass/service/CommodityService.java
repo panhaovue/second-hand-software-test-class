@@ -12,8 +12,35 @@ public class CommodityService {
     @Autowired
     CommodityMapper commodityMapper;
 
-    public List<Commodity> findCommodity(String str){
-        return commodityMapper.findCommodity(str);
+    public void insertCommidity(Commodity commodity){
+        commodityMapper.insertCommodity(commodity);
     }
 
+    public void deleteCommodity(Commodity commodity){
+        commodityMapper.deleteCommodity(commodity);
+    }
+
+    public void updateCommodity(Commodity commodity){
+        commodityMapper.updateCommodity(commodity);
+    }
+
+
+    public List<Commodity> findCommodity(Commodity commodity){
+        return commodityMapper.findCommodity(commodity);
+    }
+
+
+    public List<Commodity> find9FirstCommodity(){
+        return commodityMapper.find9FirstCommodity();
+    }
+
+    public Commodity findCommodityByCommodityId(Integer commodityId){
+        return commodityMapper.findCommodityByCommodityId(commodityId);
+    }
+
+
+
+    public List<Commodity> findCommodityByUserId(Integer userId){
+        return commodityMapper.findCommodityByUserId(userId);
+    }
 }

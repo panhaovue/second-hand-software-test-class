@@ -26,12 +26,12 @@ public class LoginController {
     public String login(User user, HttpSession session){
         User user1 = userService.findUserByStudentIdAndPassword(user);
         if (user1 == null){
-            session.setAttribute("user",user1);
             return "fail";
         }
         else {
+            session.setAttribute("user",user1);
 
-            return "success";
+            return "redirect:/";
         }
     }
 }
