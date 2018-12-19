@@ -1,71 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
     <meta charset="UTF-8">
-    <title>个人信息</title>
-    <link rel="stylesheet" href="../static/css/zd-1.0.css" />
-    <link rel="stylesheet" href="../static/css/float.css">
-    <link rel="stylesheet" href="../static/css/userinfo.css">
-    <script type="text/javascript" src="../static/js/jquery.min.js" ></script>
-    <!-- Bootstrap core CSS -->
-    <link href="./Album example for Bootstrap_files/bootstrap.min.css" th:href="@{webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="../static/css/album.css" th:href="@{css/album.css}" rel="stylesheet">
+    <title>用户信息</title>
 </head>
-<div>
-
-
-    <script>
-        $(document).click(function() {
-            $('.nav-list').removeClass('open')
-        })
-        $('.nav-menu,.nav-list').click(function(e) {
-            e.stopPropagation()
-        })
-        $('nav').find('.nav-menu').click(function(e) {
-            $('.nav-list').toggleClass('open')
-        })
-    </script>
-</div>
-
 <body>
-<form class="form-signin" action="/updateUser" method="post">
-    <div class="text-center mb-4">
-        <!--<h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>-->
-        <p>欢迎来到校内信息公开平台
-
-        </p>
-    </div>
-    <div class="form-label-group">
-        <input  type="text" id="inputName" name="userName" class="form-control" th:value="${session.user.getUserName()}" required="" autofocus="">
-        <label for="inputName">姓名</label>
-    </div>
-    <div class="form-label-group">
-        <input type="number" id="inputStudentId" name="userStudentId" class="form-control"  th:value="${session.user.getUserStudentId()}" required="" autofocus="">
-        <label for="inputStudentId">学号</label>
-    </div>
-
-    <div class="form-label-group">
-        <input type="number" id="inputPhoneNumber" name="userPhoneNumber" class="form-control" th:value="${session.user.getUserPhoneNumber()}" required="" autofocus="">
-        <label for="inputStudentId">手机号</label>
-    </div>
-    <div class="form-label-group">
-        <input type="password" id="inputPassword" name="userPassword" class="form-control" th:value="${session.user.getUserPassword()}" required="" onfocus="displaypwd()" onblur="registervalpwd()">
-        <label for="inputPassword">密码</label>
-    </div>
-    <div class="form-label-group">
-        <input type="password" id="checkPassword"  class="form-control" th:value="${session.user.getUserPassword()}" required="">
-        <label for="checkPassword">确认密码</label>
-    </div>
-
-
-    <button class="btn btn-lg btn-primary btn-block" type="submit">确认修改</button>
-    <p class="mt-5 mb-3 text-muted text-center">© 2017-2018</p>
-</form>
+    <p>
+        <span>姓名:</span><span class="card-text"  th:text="${session.otherUser.userName}">这里是姓名</span>
+    </p>
+    <p>
+        <span>学号:</span><span class="card-text"  th:text="${session.otherUser.userStudentId}">这里是商品名</span>
+    </p>
+    <p>
+        <span>用户手机号:</span><span class="card-text" th:text="${session.otherUser.userPhoneNumber}">这里是商品价格</span>
+    </p>
 
 </body>
 </html>

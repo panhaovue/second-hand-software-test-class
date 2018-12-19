@@ -28,6 +28,15 @@
                 <span>商品价格:</span><span class="card-text" th:text="${commodity.commodityPrice}">这里是商品价格</span>
             </p>
             <p>
+                <span>商品类别:</span>
+                <span class="card-text" th:if="${commodity.commodityKind}==1 ">书</span>
+                <span class="card-text" th:if="${commodity.commodityKind}==2 ">服装</span>
+                <span class="card-text" th:if="${commodity.commodityKind}==3 ">电子设备</span>
+                <span class="card-text" th:if="${commodity.commodityKind}==4 ">虚拟商品</span>
+                <span class="card-text" th:if="${commodity.commodityKind}==5 ">美妆个护</span>
+                <span class="card-text" th:if="${commodity.commodityKind}==6 ">其它</span>
+            </p>
+            <p>
                 <span>上架日期:</span><span class="card-text" th:text="${commodity.commodityTime}">这里是商品上架日期</span>
             </p>
             <p>

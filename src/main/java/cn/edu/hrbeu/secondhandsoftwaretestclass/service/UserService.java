@@ -5,6 +5,8 @@ import cn.edu.hrbeu.secondhandsoftwaretestclass.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
     @Autowired
@@ -13,6 +15,14 @@ public class UserService {
     public User insertUser(User user){
         userMapper.insertUser(user);
         return user;
+    }
+
+    public User findUserByUserId(Integer userId){
+        return userMapper.findUserByUserId(userId);
+    }
+
+    public User findUserByPhoneNumber(String userPhoneNumber){
+        return userMapper.findUserByPhoneNumber(userPhoneNumber);
     }
 
     public void updateUserByUserId(User user){

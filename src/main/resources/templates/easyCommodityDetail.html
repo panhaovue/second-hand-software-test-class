@@ -22,7 +22,7 @@
         <span>联系方式:</span><span class="card-text" th:text="${session.commodity.contactWay}">这里是商品截止日期</span>
     </p>
     <p>
-        <span>售卖人ID:</span><span class="card-text" th:text="${session.commodity.userId}">这里是商品截止日期</span>
+        <span>售卖人ID:</span><a class="card-text" th:href="@{'../otherUserInformation?userId='+${session.commodity.userId}}"  th:text="${session.commodity.userId}">这里是商品截止日期</a>
     </p>
     <p>
         <span>详细描述:</span><span class="card-text" th:text="${session.commodity.commodityDetail}">这里是商品截止日期</span>
