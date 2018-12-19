@@ -4,8 +4,6 @@ import cn.edu.hrbeu.secondhandsoftwaretestclass.bean.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
-import java.util.List;
-
 @Mapper
 public interface UserMapper {
 
@@ -21,9 +19,6 @@ public interface UserMapper {
 
     @Select("SELECT * FROM user WHERE user_id=#{userId}")
     public User findUserByUserId(Integer userId);
-
-    @Select("SELECT * FROM user WHERE user_phone_number=#{uerPhoneNumber}")
-    public User findUserByPhoneNumber(String userPhoneNumber);
 
     @Select("SELECT * FROM user " +
             "WHERE user_student_id=#{userStudentId} AND user_phone_number=#{userPhoneNumber}")

@@ -5,17 +5,9 @@ public class User {
     private Integer userId;
     private Integer userStudentId;
     private String userPassword;
-    private String userPhoneNumber;
+    private Integer userPhoneNumber;
     private Integer userPower;
 
-
-    public String getUserPhoneNumber() {
-        return userPhoneNumber;
-    }
-
-    public void setUserPhoneNumber(String userPhoneNumber) {
-        this.userPhoneNumber = userPhoneNumber;
-    }
     public Integer getUserId() {
         return userId;
     }
@@ -38,6 +30,14 @@ public class User {
 
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
+    }
+
+    public Integer getUserPhoneNumber() {
+        return userPhoneNumber;
+    }
+
+    public void setUserPhoneNumber(Integer userPhoneNumber) {
+        this.userPhoneNumber = userPhoneNumber;
     }
 
     public Integer getUserPower() {

@@ -14,48 +14,10 @@
 
     <!-- Custom styles for this template -->
     <link href="css/floating-labels.css" th:href="@{css/floating-labels.css}" rel="stylesheet">
-
-        <script type="text/javascript">
-
-            function checkall(){
-                var res = true;
-                var usrTel = document.getElementById('inputPhoneNumber');
-                var pattern= /^1\d{10}$/;
-                if(!pattern.test(usrTel.value))
-                {
-                    alert('请输入有效的手机号码，需是11位并且以1开头！');
-                    usrTel.value = "";
-                    res = false;
-                }
-                var p1 = document.getElementById('inputPassword');
-                var pattern = /^\w{6,12}$/; //密码要在6-12位
-                if(!pattern.test(p1.value)){
-                    alert("密码不合规范,请输入6-12位密码");
-                    p1.value = "";
-                    res = false;
-
-                }
-                var p2 = document.getElementById('checkPassword');
-                if(p1.value != p2.value){
-                    alert("请保持输入的密码符合规范一致");
-                    p2.value = "";
-                    res = false;
-
-                }
-                if(res){
-                    //document.forms[0].action = "user/register.action";
-                    // document.forms[0].submit();
-                    var form = document.getElementById("registerForm");
-                    form.submit();
-                }
-
-            }
-        </script>
-
-
   </head>
+
   <body>
-    <form class="form-signin" action="/register/try" method="post" id="registerForm">
+    <form class="form-signin" action="/register/try" method="post">
       <div class="text-center mb-4">
         <img class="mb-4" src="./Floating labels example for Bootstrap_files/bootstrap-solid.svg" th:src="@{image/bootstrap-solid.svg}" alt="" width="72" height="72">
         <!--<h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>-->
@@ -73,16 +35,16 @@
       </div>
 
         <div class="form-label-group">
-            <input type="number" id="inputPhoneNumber" name="userPhoneNumber" class="form-control" placeholder="Number" required="" autofocus="" onfocus="displayPhoneInfo()" onblur="valPhone()">
-            <label id="phone" for="inputPhoneNumber">手机号</label>
+            <input type="number" id="inputPhoneNumber" name="userPhoneNumber" class="form-control" placeholder="Number" required="" autofocus="">
+            <label for="inputStudentId">手机号</label>
         </div>
         <div class="form-label-group">
-          <input type="password" id="inputPassword"  name="userPassword" class="form-control" placeholder="Password" required="" onfocus="displaypwd"  onblur="loginvalpwd" >
-          <label id="passwordInfo" for="inputPassword">密码</label>
+          <input type="password" id="inputPassword" name="userPassword" class="form-control" placeholder="Password" required="">
+          <label for="inputPassword">密码</label>
       </div>
         <div class="form-label-group">
-            <input type="password" id="checkPassword"  class="form-control" placeholder="Password" required="" onfocus="displayRepassword" onblur="valRepassword">
-            <label id="re" for="checkPassword">确认密码</label>
+            <input type="password" id="checkPassword"  class="form-control" placeholder="Password" required="">
+            <label for="checkPassword">确认密码</label>
         </div>
 
       <div class="checkbox mb-3">
@@ -90,7 +52,7 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="button" onclick="checkall()">注册</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
       <p class="mt-5 mb-3 text-muted text-center">© 2017-2018</p>
     </form>
   
